@@ -95,7 +95,7 @@ We will need Express and node-telegram-bot-api in order to easily interact with 
 npm install express --savenpm install node-telegram-bot-api --save
 ```
 
-We are going to add a start script, since it’s necessary in order to deploy the game to Heroku. Open package.json and add the start script under the scripts section:
+We are going to add a start script, since it’s necessary in order to deploy the game to CloudFlare. Open package.json and add the start script under the scripts section:
 
 ```
 "scripts": {
@@ -160,7 +160,7 @@ bot.on("callback_query", function (query) {
 
 When the user clicks the play button Telegram sends us a callback. In the code above when we receive this callback first we check that the requested game is, in fact, our game, and if not we show an error to the user.
 
-If all is correct, we store the query into the queries object defined earlier under its id, in order to retrieve it later to set the high score if necessary. Then we need to answer the callback by providing the game’s URL. Later we are going to upload it to Heroku so you’ll have to enter the URL here. Note that I’m passing the id as a query parameter in the URL, in order to be able to set a high score.
+If all is correct, we store the query into the queries object defined earlier under its id, in order to retrieve it later to set the high score if necessary. Then we need to answer the callback by providing the game’s URL. Later we are going to upload it to CloudFlare so you’ll have to enter the URL here. Note that I’m passing the id as a query parameter in the URL, in order to be able to set a high score.
 
 Right now we have a fully functional game but we still are missing high scores and inline behavior. Let’s start with implementing inline and offering our game:
 
